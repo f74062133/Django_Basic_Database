@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 # Create your views here.
 def hello_view(request):
     return render(request, 'hello_django.html', {
-        'data': "",
+        'data': "Hello Django",
     })
 
 def blogs(request):
@@ -13,7 +13,7 @@ def blogs(request):
     # article = models.Blog.objects.get(pk=’41078855')
     # return render(request, ‘blog/index.html’, {“article”: articles})
     articles = models.Student.objects.all()
-    paginator = Paginator(articles, 10)  # Show 25 contacts per page
+    paginator = Paginator(articles, 10)  # Show 10 contacts per page
     page = request.GET.get('page')
     contacts = paginator.get_page(page)
     context = {'contacts': contacts}

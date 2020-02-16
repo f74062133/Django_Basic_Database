@@ -21,6 +21,6 @@ from alert import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('hello/', hello_view),
+    url('hello/', hello_view, name='hello'),
     path('blog/', views.blogs),
 ]

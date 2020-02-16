@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang=”en”>
-<head>
-    <meta charset=”UTF-8">
-    <title>Alert</title>
-    <script src="datatables.min.js"></script>
-    <script src="datatables.min.css"></script>
-    <script src="jquery-tablepage-1.0.js"></script>
-</head>
-<body>
-    <p align="right">現在時刻： <span id="datetime"></span></p>
-    <script>
-        var dt = new Date();
-        document.getElementById("datetime").innerHTML = (dt.getFullYear()) + "/"+ (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (("0"+dt.getDate()).slice(-2))  +"_"+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)) + ":" + (("0"+dt.getSeconds()).slice(-2));
-    </script>
-    <table border="1" style="width: 100%">
-        <thead>
-        <tr>
-            <td>ID</td>>
-            <td>Name</td>
-            <td>Teacher</td>
-        </tr>
-        </thead>
-        {% for contact in contacts %}
-        <tr>
-            <td>{{ contact.id }}</td>
-            <td>{{ contact.name }}</td>
-            <td>{{ contact.teacher.name }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-<div class="pagination">
-    <span class="step-links">
-        {% if contacts.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ contacts.previous_page_number }}">previous</a>
-        {% endif %}
+    <head>
+        <meta charset=”UTF-8">
+        <title>Alert</title>
+        <script src="datatables.min.js"></script>
+        <script src="datatables.min.css"></script>
+        <script src="jquery-tablepage-1.0.js"></script>
+    </head>
+    <body>
+        <p align="right">現在時刻： <span id="datetime"></span></p>
+        <script>
+            var dt = new Date();
+            document.getElementById("datetime").innerHTML = (dt.getFullYear()) + "/"+ (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (("0"+dt.getDate()).slice(-2))  +"_"+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)) + ":" + (("0"+dt.getSeconds()).slice(-2));
+        </script>
+        <table border="1" style=width:100%>
+            <thead>
+            <tr>
+                <td>ID</td>>
+                <td>Name</td>
+                <td>Teacher</td>
+            </tr>
+            </thead>
+            {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.name }}</td>
+                <td><a href="{% url 'hello' %}">{{ contact.teacher.id}}</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="pagination">
+            <span class="step-links">
+                {% if contacts.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ contacts.previous_page_number }}">previous</a>
+                {% endif %}
 
-        <span class="current">
-            Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
-        </span>
+                <span class="current">
+                    Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+                </span>
 
-        {% if contacts.has_next %}
-            <a href="?page={{ contacts.next_page_number }}">next</a>
-            <a href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a>
-        {% endif %}
-    </span>
-</div>
-</body>
+                {% if contacts.has_next %}
+                    <a href="?page={{ contacts.next_page_number }}">next</a>
+                    <a href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </body>
 </html>

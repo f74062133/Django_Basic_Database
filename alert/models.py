@@ -50,7 +50,7 @@ class Teacher(models.Model):
 class Student(models.Model):
     id = models.IntegerField(db_column='id', unique=True, primary_key=True)
     name = models.CharField(db_column='name', max_length=50)
-    teacher = models.ForeignKey('Teacher',on_delete=models.CASCADE)
+    teacher = models.ForeignKey('Teacher',on_delete=models.CASCADE, related_name='teacher')
 
     class Meta:
         managed = False
