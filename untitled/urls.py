@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('hello/', hello_view, name='hello'),
     path('blog/', views.blogs),
+    path('child/<str:num>', views.child, name = 'child'),
 ]

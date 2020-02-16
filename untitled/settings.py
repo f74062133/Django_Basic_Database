@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'untitled.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'busapp_test',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mimic',
+        'USER': 'postgres',
+        'PASSWORD': 'ThisIsIIR110Password',
+        'HOST': '140.116.247.169',
+        'PORT': '5432',
     }
 }
 

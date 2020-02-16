@@ -25,7 +25,7 @@
             <tr>
                 <td>{{ contact.id }}</td>
                 <td>{{ contact.name }}</td>
-                <td><a href="{% url 'hello' %}">{{ contact.teacher.id}}</a></td>
+                <td><a href="/child/{{ contact.teacher.id }}">{{ contact.teacher.id}}</a></td>
             </tr>
             {% endfor %}
         </table>

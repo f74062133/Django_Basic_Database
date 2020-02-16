@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang=”en”>
+    <head>
+        <meta charset=”UTF-8">
+        <title>Alert</title>
+        <script src="datatables.min.js"></script>
+        <script src="datatables.min.css"></script>
+        <script src="jquery-tablepage-1.0.js"></script>
+    </head>
+    <body>
+        <table border="1" style=width:100%>
+            <thead>
+            <tr>
+                <td>ID</td>>
+                <td>Name</td>
+            </tr>
+            </thead>
+            {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.name }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
