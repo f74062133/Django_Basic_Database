@@ -77,7 +77,10 @@ WSGI_APPLICATION = 'untitled.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'OPTIONS': {
+            'options': '-c search_path=django,mimiciii'
+        },
         'NAME': 'mimic',
         'USER': 'postgres',
         'PASSWORD': 'ThisIsIIR110Password',

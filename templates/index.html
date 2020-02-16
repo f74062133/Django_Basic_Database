@@ -16,16 +16,16 @@
         <table border="1" style=width:100%>
             <thead>
             <tr>
-                <td>ID</td>>
-                <td>Name</td>
-                <td>Teacher</td>
+                <td>row</td>>
+                <td>subject_id</td>
+                <td>hadm_id</td>
             </tr>
             </thead>
             {% for contact in contacts %}
             <tr>
-                <td>{{ contact.id }}</td>
-                <td>{{ contact.name }}</td>
-                <td><a href="/child/{{ contact.teacher.id }}">{{ contact.teacher.id}}</a></td>
+                <td>{{ contact.row_id }}</td>
+                <td><a href="/child/{{ contact.subject.subject_id }}">{{ contact.subject.subject_id }}</a></td>
+                <td>{{ contact.hadm_id }}</td>
             </tr>
             {% endfor %}
         </table>

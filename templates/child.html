@@ -13,12 +13,14 @@
             <tr>
                 <td>ID</td>>
                 <td>Name</td>
+                <td>Gender</td>
             </tr>
             </thead>
             {% for contact in contacts %}
             <tr>
-                <td>{{ contact.id }}</td>
-                <td>{{ contact.name }}</td>
+                <td>{{ contact.row_id }}</td>
+                <td>{{ contact.subject_id }}</td>
+                <td>{{ contact.gender }}</td>
             </tr>
             {% endfor %}
         </table>

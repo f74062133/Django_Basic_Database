@@ -3,7 +3,6 @@ from alert import models
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
-from .models import Student
 
 # Create your views here.
 def hello_view(request):
@@ -17,8 +16,8 @@ def blogs(request):
     # return HttpResponse(“Hello world ! “)
     # article = models.Blog.objects.get(pk=’41078855')
     # return render(request, ‘blog/index.html’, {“article”: articles})
-    articles = models.Student.objects.all()
-    paginator = Paginator(articles, 1)  # Show 10 contacts per page
+    articles = models.Admissions.objects.all()
+    paginator = Paginator(articles, 10)  # Show 10 contacts per page
     page = request.GET.get('page')
     contacts = paginator.get_page(page)
     context = {'contacts': contacts}
@@ -33,7 +32,7 @@ def blogs(request):
     return render(request, "index.html",{'contacts': contacts}) #必须用这个return
 
 def child(request, num):
-    articles = models.Teacher.objects.filter(id=num)
+    articles = models.Patients.objects.filter(subject=num)
     paginator = Paginator(articles, 10)  # Show 10 contacts per page
     page = request.GET.get('page')
     contacts = paginator.get_page(page)
