@@ -7,29 +7,68 @@
         <script src="datatables.min.css"></script>
         <script src="jquery-tablepage-1.0.js"></script>
     </head>
+    <style>
+        table {
+          border-collapse: collapse;
+        }
+
+        table, th, td {
+          border: 1px solid black;
+        }
+        tr td:hover {background-color:#aaaaaa;}
+        th {
+          background-color: #666666;
+          color: white;
+        }
+
+    </style>
     <body>
+        <form>
+        <select name="table" id = "table" >
+            <option value="admissions">admissions</option>
+            <option value="callout">callout</option>
+            <option value="caregivers">caregivers</option>
+            <option value="cptevents">cptevents</option>
+        </select>
+        </form>
         <p align="right">現在時刻： <span id="datetime"></span></p>
         <script>
             var dt = new Date();
             document.getElementById("datetime").innerHTML = (dt.getFullYear()) + "/"+ (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (("0"+dt.getDate()).slice(-2))  +"_"+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)) + ":" + (("0"+dt.getSeconds()).slice(-2));
+            function LinkSamePatientID(x){
+                var table_name = document.getElementById("table").value;
+                window.location.href="/patients/"+table_name+"/"+x.toString();
+            }
         </script>
+
         <table border="1" style=width:100%>
             <thead>
             <tr>
-                <td>row</td>>
-                <td>subject_id</td>
-                <td>hadm_id</td>
+                <th>ROW_ID</th>>
+                <th><a href="" style="color: #33ffff">SUBJECT_ID</a></th>
+                <th>GENDER</th>
+                <th>DOB</th>
+                <th>DOD</th>
+                <th>DOD_HOSP</th>
+                <th>DOD_SSN</th>
+                <th>EXPIRE_FLAG</th>
+
             </tr>
             </thead>
             {% for contact in contacts %}
             <tr>
                 <td>{{ contact.row_id }}</td>
-                <td><a href="/child/{{ contact.subject.subject_id }}">{{ contact.subject.subject_id }}</a></td>
-                <td>{{ contact.hadm_id }}</td>
+                <td onclick="LinkSamePatientID({{ contact.subject_id }})">{{ contact.subject_id }}</td>
+                <td>{{ contact.gender }}</td>
+                <td>{{ contact.dob }}</td>
+                <td>{{ contact.dod }}</td>
+                <td>{{ contact.dod_hosp }}</td>
+                <td>{{ contact.dod_ssn }}</td>
+                <td>{{ contact.expire_flag }}</td>
             </tr>
             {% endfor %}
         </table>
-        <div class="pagination">
+        <div>
             <span class="step-links">
                 {% if contacts.has_previous %}
                     <a href="?page=1">&laquo; first</a>

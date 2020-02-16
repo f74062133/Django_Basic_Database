@@ -10,13 +10,13 @@ def hello_view(request):
         'data': 'hello django',
     })
 
-def blogs(request):
+def patients(request):
     #num = {'id_get':[]}
     #num = num.cleaned_data['id_get']
     # return HttpResponse(“Hello world ! “)
     # article = models.Blog.objects.get(pk=’41078855')
     # return render(request, ‘blog/index.html’, {“article”: articles})
-    articles = models.Admissions.objects.all()
+    articles = models.Patients.objects.all()
     paginator = Paginator(articles, 10)  # Show 10 contacts per page
     page = request.GET.get('page')
     contacts = paginator.get_page(page)
@@ -31,8 +31,8 @@ def blogs(request):
     #返回至前端渲染
     return render(request, "index.html",{'contacts': contacts}) #必须用这个return
 
-def child(request, num):
-    articles = models.Patients.objects.filter(subject=num)
+def admissions(request, num):
+    articles = models.Admissions.objects.filter(subject=num)
     paginator = Paginator(articles, 10)  # Show 10 contacts per page
     page = request.GET.get('page')
     contacts = paginator.get_page(page)
