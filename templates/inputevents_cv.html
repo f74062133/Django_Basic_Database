@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang=”en”>
+    <head>
+        <meta charset=”UTF-8">
+        <title>Alert</title>
+        <script src="datatables.min.js"></script>
+        <script src="datatables.min.css"></script>
+        <script src="jquery-tablepage-1.0.js"></script>
+    </head>
+    <style>
+        table {
+          border-collapse: collapse;
+        }
+
+        table, th, td {
+          border: 1px solid black;
+        }
+        tr td:hover {background-color:#aaaaaa;}
+        th {
+          background-color: #666666;
+          color: white;
+        }
+
+    </style>
+    <body>
+    <p>INPUTEVENTS_CV</p>
+        <table border="1" style=width:100%>
+            <thead>
+            <tr>
+                <th>row_id</th>
+                <th>subject</th>
+                <th>hadm</th>
+                <th>icustay</th>
+                <th>charttime</th>
+                <th>itemid</th>
+                <th>amount</th>
+                <th>amountuom</th>
+                <th>rate</th>
+                <th>rateuom</th>
+                <th>storetime</th>
+                <th>cgid</th>
+                <th>orderid</th>
+                <th>linkorderid</th>
+                <th>stopped</th>
+                <th>newbottle</th>
+                <th>originalamount</th>
+                <th>originalamountuom</th>
+                <th>originalroute</th>
+                <th>originalrate</th>
+                <th>originalrateuom</th>
+                <th>originalsite</th>
+            </tr>
+            </thead>
+            {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.row_id }}</td>
+                <td>{{ contact.subject_id }}</td>
+                <td><a href="/patients/admissions/find_hadmid/{{ contact.hadm_id }}" >{{ contact.hadm_id }}</a></td>
+                <td><a href="/patients/icustays/find_icustays/{{ contact.icustay_id }}">{{ contact.icustay_id }}</a></td>
+                <td>{{ contact.charttime }}</td>
+                <td>{{ contact.itemid }}</td>
+                <td>{{ contact.amount }}</td>
+                <td>{{ contact.amountuom }}</td>
+                <td>{{ contact.rate }}</td>
+                <td>{{ contact.rateuom }}</td>
+                <td>{{ contact.storetime }}</td>
+                <td>{{ contact.cgid }}</td>
+                <td>{{ contact.orderid }}</td>
+                <td>{{ contact.linkorderid }}</td>
+                <td>{{ contact.stopped }}</td>
+                <td>{{ contact.newbottle }}</td>
+                <td>{{ contact.originalamount }}</td>
+                <td>{{ contact.originalamountuom }}</td>
+                <td>{{ contact.originalroute }}</td>
+                <td>{{ contact.originalrate }}</td>
+                <td>{{ contact.originalrateuom }}</td>
+                <td>{{ contact.originalsite }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div>
+            <span class="step-links">
+                {% if contacts.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ contacts.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+                </span>
+
+                {% if contacts.has_next %}
+                    <a href="?page={{ contacts.next_page_number }}">next</a>
+                    <a href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+        <a href="/patients/">home</a>
+    </body>
+</html>

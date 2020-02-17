@@ -23,53 +23,26 @@
 
     </style>
     <body>
-    <p>ADMISSION</p>
+    <p>D_LABITEMS</p>
         <table border="1" style=width:100%>
             <thead>
             <tr>
                 <th>row_id</th>
-                <th>subject</th>
-                <th>hadm_id</th>
-                <th>admittime</th>
-                <th>dischtime</th>
-                <th>deathtime</th>
-                <th>admission_type</th>
-                <th>admission_location</th>
-                <th>discharge_location</th>
-                <th>insurance</th>
-                <th>language</th>
-                <th>religion</th>
-                <th>marital_status</th>
-                <th>ethnicity</th>
-                <th>edregtime</th>
-                <th>edouttime</th>
-                <th>diagnosis</th>
-                <th>hospital_expire_flag</th>
-                <th>has_chartevents_data</th>
+                <th>itemid</th>
+                <th>label</th>
+                <th>fluid</th>
+                <th>category</th>
+                <th>loinc_code</th>
             </tr>
             </thead>
             {% for contact in contacts %}
             <tr>
                 <td>{{ contact.row_id }}</td>
-                <td>{{ contact.subject_id }}</td>
-                <td>{{ contact.hadm_id }}</td>
-                <td>{{ contact.admittime }}</td>
-                <td>{{ contact.dischtime }}</td>
-                <td>{{ contact.deathtime }}</td>
-                <td>{{ contact.admission_type }}</td>
-                <td>{{ contact.admission_location }}</td>
-                <td>{{ contact.discharge_location }}</td>
-                <td>{{ contact.insurance }}</td>
-                <td>{{ contact.language }}</td>
-                <td>{{ contact.religion }}</td>
-                <td>{{ contact.marital_status }}</td>
-                <td>{{ contact.ethnicity }}</td>
-                <td>{{ contact.edregtime }}</td>
-                <td>{{ contact.edouttime }}</td>
-                <td>{{ contact.diagnosis }}</td>
-                <td>{{ contact.hospital_expire_flag }}</td>
-                <td>{{ contact.has_chartevents_data }}</td>
-
+                <td>{{ contact.itemid }}</td>
+                <td>{{ contact.label }}</td>
+                <td>{{ contact.fluid }}</td>
+                <td>{{ contact.category }}</td>
+                <td>{{ contact.loinc_code }}</td>
             </tr>
             {% endfor %}
         </table>

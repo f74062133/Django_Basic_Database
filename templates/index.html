@@ -27,8 +27,23 @@
         <select name="table" id = "table" >
             <option value="admissions">admissions</option>
             <option value="callout">callout</option>
-            <option value="caregivers">caregivers</option>
             <option value="cptevents">cptevents</option>
+            <option value="datetimeevents">datetimeevents</option>
+            <option value="diagnoses_icd">diagnoses_icd</option>
+            <option value="drgcodes">drgcodes</option>
+            <option value="icustays">icustays</option>
+            <option value="inputevents_cv">inputevents_cv</option>
+            <option value="inputevents_mv">inputevents_mv</option>
+            <option value="labevents">labevents</option>
+            <option value="microbiologyevents">microbiologyevents</option>
+            <option value="noteevents" >noteevents</option>
+            <option value="outputevents" >outputevents</option>
+            <option value="prescriptions" >prescriptions</option>
+            <option value="procedureevents_mv" >procedureevents_mv</option>
+            <option value="procedures_icd" >procedures_icd</option>
+            <option value="services">services</option>
+            <option value="transfers">transfers</option>
+            <option value="chartevents">chartevents</option>
         </select>
         </form>
         <p align="right">現在時刻： <span id="datetime"></span></p>
@@ -40,7 +55,7 @@
                 window.location.href="/patients/"+table_name+"/"+x.toString();
             }
         </script>
-
+        <p>PATIENTS</p>
         <table border="1" style=width:100%>
             <thead>
             <tr>
@@ -85,5 +100,6 @@
                 {% endif %}
             </span>
         </div>
+
     </body>
 </html>

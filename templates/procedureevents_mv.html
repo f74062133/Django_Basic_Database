@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang=”en”>
+    <head>
+        <meta charset=”UTF-8">
+        <title>Alert</title>
+        <script src="datatables.min.js"></script>
+        <script src="datatables.min.css"></script>
+        <script src="jquery-tablepage-1.0.js"></script>
+    </head>
+    <style>
+        table {
+            border-collapse: collapse;
+
+        }
+
+        table, th, td {
+          border: 1px solid black;
+        }
+        tr td:hover {background-color:#aaaaaa;}
+        th {
+          background-color: #666666;
+          color: white;
+        }
+
+    </style>
+    <body>
+    <p>PROCEDUREEVENTS_MV</p>
+        <table border="1" style=width:100%>
+            <thead>
+            <tr>
+                <th>row_id</th>
+                <th>subject</th>
+                <th>hadm</th>
+                <th>icustay</th>
+                <th>starttime</th>
+                <th>endtime</th>
+                <th>itemid</th>
+                <th>value</th>
+                <th>valueuom</th>
+                <th>location</th>
+                <th>locationcategory</th>
+                <th>storetime</th>
+                <th>cgid</th>
+                <th>orderid</th>
+                <th>linkorderid</th>
+                <th>ordercategoryname</th>
+                <th>secondaryordercategoryname</th>
+                <th>ordercategorydescription</th>
+                <th>isopenbag</th>
+                <th>continueinnextdept</th>
+                <th>cancelreason</th>
+                <th>statusdescription</th>
+                <th>comments_editedby</th>
+                <th>comments_canceledby</th>
+                <th>comments_date</th>
+            </tr>
+            </thead>
+            {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.row_id }}</td>
+                <td>{{ contact.subject_id }}</td>
+                <td><a href="/patients/admissions/find_hadmid/{{ contact.hadm_id }}" >{{ contact.hadm_id }}</a></td>
+                <td><a href="/patients/icustays/find_icustays/{{ contact.icustay_id }}">{{ contact.icustay_id }}</a></td>
+                <td>{{ contact.starttime }}</td>
+                <td>{{ contact.endtime }}</td>
+                <td><a href="/patients/d_items/{{ contact.itemid_id }}">{{ contact.itemid_id }}</a></td>
+                <td>{{ contact.value }}</td>
+                <td>{{ contact.valueuom }}</td>
+                <td>{{ contact.location }}</td>
+                <td>{{ contact.locationcategory }}</td>
+                <td>{{ contact.storetime }}</td>
+                <td>{{ contact.cgid }}</td>
+                <td>{{ contact.orderid }}</td>
+                <td>{{ contact.linkorderid }}</td>
+                <td>{{ contact.ordercategoryname }}</td>
+                <td>{{ contact.secondaryordercategoryname }}</td>
+                <td>{{ contact.ordercategorydescription }}</td>
+                <td>{{ contact.isopenbag }}</td>
+                <td>{{ contact.continueinnextdept }}</td>
+                <td>{{ contact.cancelreason }}</td>
+                <td>{{ contact.statusdescription }}</td>
+                <td>{{ contact.comments_editedby }}</td>
+                <td>{{ contact.comments_canceledby }}</td>
+                <td>{{ contact.comments_date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div>
+            <span class="step-links">
+                {% if contacts.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ contacts.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+                </span>
+
+                {% if contacts.has_next %}
+                    <a href="?page={{ contacts.next_page_number }}">next</a>
+                    <a href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+        <a href="/patients/">home</a>
+    </body>
+</html>

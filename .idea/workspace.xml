@@ -2,11 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ade33064-3b1b-4bf0-b8e0-e228f1d1e785" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/callout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/chartevents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cptevents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/d_icd_diagnoses.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/d_icd_procedures.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/d_items.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/d_labitems.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/datetimeevents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/diagnoses_icd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/drgcodes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/find_hadmid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/find_icustays.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/icustays.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/inputevents_cv.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/inputevents_mv.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/labevents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/microbiologyevents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/noteevents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/outputevents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/prescriptions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/procedureevents_mv.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/procedures_icd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/services.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/transfers.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alert/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/alert/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alert/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/alert/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/child.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/child.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/untitled/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +131,7 @@
       <workItem from="1576554788391" duration="1271000" />
       <workItem from="1576813903102" duration="1056000" />
       <workItem from="1581386300390" duration="6973000" />
-      <workItem from="1581775106572" duration="48838000" />
+      <workItem from="1581775106572" duration="68650000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1581820798738</created>
@@ -141,22 +165,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="410" y="20" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1581820794530" />
-    <state width="1007" height="208" key="GridCell.Tab.0.bottom" timestamp="1581896274673">
+    <state width="1007" height="208" key="GridCell.Tab.0.bottom" timestamp="1581932457785">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1007" height="208" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1581896274673" />
-    <state width="1007" height="208" key="GridCell.Tab.0.center" timestamp="1581896274673">
+    <state width="1007" height="208" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1581932457785" />
+    <state width="1007" height="208" key="GridCell.Tab.0.center" timestamp="1581932457784">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1007" height="208" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1581896274673" />
-    <state width="1007" height="208" key="GridCell.Tab.0.left" timestamp="1581896274672">
+    <state width="1007" height="208" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1581932457784" />
+    <state width="1007" height="208" key="GridCell.Tab.0.left" timestamp="1581932457784">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1007" height="208" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1581896274672" />
-    <state width="1007" height="208" key="GridCell.Tab.0.right" timestamp="1581896274673">
+    <state width="1007" height="208" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1581932457784" />
+    <state width="1007" height="208" key="GridCell.Tab.0.right" timestamp="1581932457785">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1007" height="208" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1581896274673" />
+    <state width="1007" height="208" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1581932457785" />
     <state width="1342" height="258" key="GridCell.Tab.1.bottom" timestamp="1576837632112">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

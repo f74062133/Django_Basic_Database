@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang=”en”>
+    <head>
+        <meta charset=”UTF-8">
+        <title>Alert</title>
+        <script src="datatables.min.js"></script>
+        <script src="datatables.min.css"></script>
+        <script src="jquery-tablepage-1.0.js"></script>
+    </head>
+    <style>
+        table {
+          border-collapse: collapse;
+        }
+
+        table, th, td {
+          border: 1px solid black;
+        }
+        tr td:hover {background-color:#aaaaaa;}
+        th {
+          background-color: #666666;
+          color: white;
+        }
+
+    </style>
+    <body>
+    <p>CALLOUT</p>
+        <table border="1" style=width:100%>
+            <thead>
+            <tr>
+                <th>row_id</th>
+                <th>subject</th>
+                <th>hadm</th>
+                <th>submit_wardid</th>
+                <th>submit_careunit</th>
+                <th>curr_wardid</th>
+                <th>curr_careunit</th>
+                <th>callout_wardid</th>
+                <th>callout_service</th>
+                <th>request_tele</th>
+                <th>request_resp</th>
+                <th>request_cdiff</th>
+                <th>request_mrsa</th>
+                <th>request_vre</th>
+                <th>callout_status</th>
+                <th>callout_outcome</th>
+                <th>discharge_wardid</th>
+                <th>acknowledge_status</th>
+                <th>createtime</th>
+                <th>updatetime</th>
+                <th>acknowledgetime</th>
+                <th>outcometime</th>
+                <th>firstreservationtime</th>
+                <th>currentreservationtime</th>
+            </tr>
+            </thead>
+            {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.row_id }}</td>
+                <td>{{ contact.subject_id }}</td>
+                <td><a href="/patients/admissions/find_hadmid/{{ contact.hadm_id }}" >{{ contact.hadm_id }}</a></td>
+                <td>{{ contact.submit_wardid }}</td>
+                <td>{{ contact.submit_careunit }}</td>
+                <td>{{ contact.curr_wardid }}</td>
+                <td>{{ contact.curr_careunit }}</td>
+                <td>{{ contact.callout_wardid }}</td>
+                <td>{{ contact.callout_service }}</td>
+                <td>{{ contact.request_tele }}</td>
+                <td>{{ contact.request_resp }}</td>
+                <td>{{ contact.request_cdiff }}</td>
+                <td>{{ contact.request_mrsa }}</td>
+                <td>{{ contact.request_vre }}</td>
+                <td>{{ contact.callout_status }}</td>
+                <td>{{ contact.callout_outcome }}</td>
+                <td>{{ contact.discharge_wardid }}</td>
+                <td>{{ contact.acknowledge_status }}</td>
+                <td>{{ contact.createtime }}</td>
+                <td>{{ contact.updatetime }}</td>
+                <td>{{ contact.acknowledgetime }}</td>
+                <td>{{ contact.outcometime }}</td>
+                <td>{{ contact.firstreservationtime }}</td>
+                <td>{{ contact.currentreservationtime }}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+        <div>
+            <span class="step-links">
+                {% if contacts.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ contacts.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+                </span>
+
+                {% if contacts.has_next %}
+                    <a href="?page={{ contacts.next_page_number }}">next</a>
+                    <a href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+        <a href="/patients/">home</a>
+    </body>
+</html>

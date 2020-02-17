@@ -23,29 +23,22 @@
 
     </style>
     <body>
-    <p>ADMISSION</p>
+    <p>ICUSTAYS</p>
         <table border="1" style=width:100%>
             <thead>
             <tr>
                 <th>row_id</th>
                 <th>subject</th>
-                <th>hadm_id</th>
-                <th>admittime</th>
-                <th>dischtime</th>
-                <th>deathtime</th>
-                <th>admission_type</th>
-                <th>admission_location</th>
-                <th>discharge_location</th>
-                <th>insurance</th>
-                <th>language</th>
-                <th>religion</th>
-                <th>marital_status</th>
-                <th>ethnicity</th>
-                <th>edregtime</th>
-                <th>edouttime</th>
-                <th>diagnosis</th>
-                <th>hospital_expire_flag</th>
-                <th>has_chartevents_data</th>
+                <th>hadm</th>
+                <th>icustay_id</th>
+                <th>dbsource</th>
+                <th>first_careunit</th>
+                <th>last_careunit</th>
+                <th>first_wardid</th>
+                <th>last_wardid</th>
+                <th>intime</th>
+                <th>outtime</th>
+                <th>los</th>
             </tr>
             </thead>
             {% for contact in contacts %}
@@ -53,23 +46,15 @@
                 <td>{{ contact.row_id }}</td>
                 <td>{{ contact.subject_id }}</td>
                 <td>{{ contact.hadm_id }}</td>
-                <td>{{ contact.admittime }}</td>
-                <td>{{ contact.dischtime }}</td>
-                <td>{{ contact.deathtime }}</td>
-                <td>{{ contact.admission_type }}</td>
-                <td>{{ contact.admission_location }}</td>
-                <td>{{ contact.discharge_location }}</td>
-                <td>{{ contact.insurance }}</td>
-                <td>{{ contact.language }}</td>
-                <td>{{ contact.religion }}</td>
-                <td>{{ contact.marital_status }}</td>
-                <td>{{ contact.ethnicity }}</td>
-                <td>{{ contact.edregtime }}</td>
-                <td>{{ contact.edouttime }}</td>
-                <td>{{ contact.diagnosis }}</td>
-                <td>{{ contact.hospital_expire_flag }}</td>
-                <td>{{ contact.has_chartevents_data }}</td>
-
+                <td>{{ contact.icustay_id }}</td>
+                <td>{{ contact.dbsource }}</td>
+                <td>{{ contact.first_careunit }}</td>
+                <td>{{ contact.last_careunit }}</td>
+                <td>{{ contact.first_wardid }}</td>
+                <td>{{ contact.last_wardid }}</td>
+                <td>{{ contact.intime }}</td>
+                <td>{{ contact.outtime }}</td>
+                <td>{{ contact.los }}</td>
             </tr>
             {% endfor %}
         </table>
